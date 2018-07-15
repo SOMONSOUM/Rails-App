@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: 
+  pool: 5
+
+development:
+  <<: *default
+  database: bookworm_development
+
+
+test:
+  <<: *default
+  database: bookworm_test
+
+# production:
+#   <<: *default
+#   database: bookworm_production
+#   username: bookworm
+#   password: <%= ENV['BOOKWORM_DATABASE_PASSWORD'] %>
